@@ -1,0 +1,38 @@
+﻿@page
+@model RazorPage.Pages.ProductForms.AddProductModel
+@{
+    ViewData["Title"] = "Add Product";
+}
+
+<h1>Add Product</h1>
+
+<form method="post">
+    <div>
+        <label for="Product ID">Product ID</label>
+        <br />
+        <input asp-for="Product.Id", placeholder="Input Product ID" />
+        <span asp-validation-for="Product.Id"></span>
+    </div>
+
+    <div>
+        <label for="Product Name">Product Name</label>
+        <br />
+        <input asp-for="Product.Name"placeholder="Enter Product Name">
+        <span asp-validation-for="Product.Name"></span>
+    </div>
+    <div>
+        <label asp-for="Product.Description"></label>
+        <input asp-for="Product.Description" />
+        <span asp-validation-for="Product.Description"></span>
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+
+<div>
+    <a asp-page="/Index">Back to List</a>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

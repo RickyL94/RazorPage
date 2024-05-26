@@ -1,0 +1,23 @@
+﻿@page
+@model RazorPage.Pages.ProductForms.DisplayProductModel
+@{
+    ViewData["Title"] = "Display Products";
+}
+
+<h1>Display Products</h1>
+@if (Model.Products != null && Model.Products.Any())
+{
+    @foreach (var product in Model.Products)
+    {
+        <div>
+            <h2>@product.Id</h2>
+            <p>@product.Name</p>
+            <p>@product.Description</p>
+        </div>
+    }
+}
+else
+{
+    <p>Product not found.</p>
+}
+
